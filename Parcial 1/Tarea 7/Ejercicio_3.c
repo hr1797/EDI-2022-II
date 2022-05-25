@@ -3,8 +3,7 @@
 
 #define TOTAL_PRODUCTOS 4
 
-int main ()
-{
+int main () {
     int clave_mayor_precio = 0, mayor_precio = 0;
     int clave_menor_stock = 0, menor_stock = INT_MAX;
     float total_ventas = 0;
