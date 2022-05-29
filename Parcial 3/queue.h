@@ -12,7 +12,7 @@ int colaLlena(Cola cola);
 int insertarCola(Cola *c, int valor);
 int eliminarCola(Cola *c, int *v);
 int totalElementosCola(Cola *c);
-int indiceSiguienteJugador(Cola *c, int indiceAnterior);
+int indiceSiguiente(Cola *c, int indiceAnterior);
 
 void inicializarCola(Cola *c)
 {
@@ -65,7 +65,7 @@ int totalElementosCola(Cola *c)
     return c->fin - c->inicio;
 }
 
-int indiceSiguienteJugador(Cola *c, int indiceAnterior)
+int indiceSiguiente(Cola *c, int indiceAnterior)
 {
     if(indiceAnterior == c->fin - 1)
         return c->inicio;

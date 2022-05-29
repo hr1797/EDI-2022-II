@@ -28,18 +28,15 @@ void init_set(Set *s)
 int add(Set *s, int value)
 {
      int exists = 0;
-     if(s->size < SET_CAPACITY)
+     if(s->size < SET_CAPACITY && find(*s, value) == -1)
      {
-         if(find(*s, value) == -1)
-         {
-             int index;
-             for(index = s->size - 1 ; index >= 0 && s->data[index] > value ; index--)
-                s->data[index + 1] = s->data[index];
+        int index;
+        for(index = s->size - 1 ; index >= 0 && s->data[index] > value ; index--)
+            s->data[index + 1] = s->data[index];
 
-             s->data[index + 1] = value;
-             s->size++;
-             return 1;
-         }
+        s->data[index + 1] = value;
+        s->size++;
+        return 1;
      }
      return 0;
 }

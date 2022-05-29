@@ -25,12 +25,12 @@ int main()
         if(indiceFuera == -1)
             indiceFuera = totalElementosCola_1 - 1;
 
-        int indiceSiguiente = indiceSiguienteJugador(&cola_1, indiceFuera);
+        int ind = indiceSiguiente(&cola_1, indiceFuera);
 
         for(int j = 0 ; j < totalElementosCola_1 - 1 ; j++)
         {
-            insertarCola(&cola_2, cola_1.datos[indiceSiguiente]);
-            indiceSiguiente = indiceSiguienteJugador(&cola_1, indiceSiguiente);
+            insertarCola(&cola_2, cola_1.datos[ind]);
+            ind = indiceSiguiente(&cola_1, ind);
         }
 
         inicializarCola(&cola_1);

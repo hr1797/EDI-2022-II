@@ -10,6 +10,7 @@ int isEmpty(Stack stack);
 int isFull(Stack stack);
 int push(Stack *s, int value);
 int pop(Stack *s, int *v);
+int findIndex(Stack stack, int value);
 
 void setup(Stack *s)
 {
@@ -30,7 +31,6 @@ int push(Stack *s, int value)
 {
     if(!isFull(*s))
     {
-        // s->top++;
         s->data[++s->top] = value;
         return 1;
     }
@@ -45,4 +45,12 @@ int pop(Stack *s, int *v)
         return 1;
     }
     return 0;
+}
+
+int findIndex(Stack stack, int value)
+{
+    for(int i = 0 ; i <= stack.top ; i++)
+        if(stack.data[i] == value)
+            return i;
+    return -1;
 }
